@@ -26,7 +26,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface LtDrawer {
+        "onDrawerAfterHide"?: (event: CustomEvent<any>) => void;
+        "onDrawerAfterShow"?: (event: CustomEvent<any>) => void;
         "onDrawerHide"?: (event: CustomEvent<any>) => void;
+        "onDrawerOverlayDismiss"?: (event: CustomEvent<any>) => void;
         "onDrawerShow"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
         "position"?: 'top' | 'right' | 'bottom' | 'left';

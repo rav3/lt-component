@@ -9,12 +9,13 @@
     <script nomodule src="/build/lt-component.js"></script>
   </head>
   <body>
-    <lt-drawer position="right">slkcmlsdm</lt-drawer>
+    <lt-drawer position="top">slkcmlsdm</lt-drawer>
     <button class="openBtn">Open</button>
     <script>
       var drawer = document.querySelector('lt-drawer');
       var openBtn = document.querySelector('button');
 
+      drawer.open = true;
       openBtn.addEventListener('click', function(){
         drawer.show();
       })

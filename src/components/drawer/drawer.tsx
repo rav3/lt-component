@@ -16,7 +16,6 @@ export class Drawer{
     @Element() host: HTMLLtDrawerElement;
 
     @Prop() position: 'top' | 'right' | 'bottom' | 'left' = 'right';
-
     @Prop({ mutable: true, reflect: true }) open = false;
 
     @Watch('open')
@@ -24,8 +23,11 @@ export class Drawer{
         this.open ? this.show() : this.hide();
     }
 
-    @Event({eventName: 'drawerHide'}) drawerHide: EventEmitter;
-    @Event({eventName: 'drawerShow'}) drawerShow: EventEmitter;
+    @Event() drawerHide: EventEmitter;
+    @Event() drawerAfterHide: EventEmitter;
+    @Event() drawerShow: EventEmitter;
+    @Event() drawerAfterShow: EventEmitter;
+    @Event() drawerOverlayDismiss: EventEmitter;
 
     connectedCallback() {
         this.handleCloseClick = this.handleCloseClick.bind(this);
@@ -91,6 +93,7 @@ export class Drawer{
         const target = event.target as HTMLElement;
     
         if (event.propertyName === 'transform' && target.classList.contains('drawer__panel')) {
+            this.open ? this.drawerAfterShow.emit() : this.drawerAfterHide.emit();
             this.drawer.hidden = !this.open;
     
             if (this.open) {
@@ -124,6 +127,7 @@ export class Drawer{
                     role="dialog"
                     aria-modal="true"
                     aria-hidden={!this.open}
+                    tabIndex={0}
                 >
                     <button class="drawer__close" onClick={this.handleCloseClick}>✕</button>
                     <slot />
