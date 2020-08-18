@@ -25,7 +25,7 @@
         left: 0;
         pointer-events: all;
         // background-color:rgba(black, 0.5);
-        background-color: var(-lt-overlay-bgcolor);
+        background-color: var(--lt-overlay-bgcolor);
         opacity:0;
         transition: 250ms opacity;
         
