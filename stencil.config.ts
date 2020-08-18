@@ -5,8 +5,11 @@ export const config: Config = {
   namespace: 'lt-component',
   taskQueue: 'async',
   buildEs5: true,
+  globalStyle: 'src/globalStyle/global.scss',
   plugins: [
-    sass()
+    sass({
+      includePaths: ['src/globalStyle']
+    })
   ],
   outputTargets: [
     {
