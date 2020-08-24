@@ -12,6 +12,12 @@ export namespace Components {
         "position": 'top' | 'right' | 'bottom' | 'left';
         "show": () => Promise<void>;
     }
+    interface LtModal {
+        "hide": () => Promise<void>;
+        "modaltitle": string;
+        "open": boolean;
+        "show": () => Promise<void>;
+    }
 }
 declare global {
     interface HTMLLtDrawerElement extends Components.LtDrawer, HTMLStencilElement {
@@ -20,8 +26,15 @@ declare global {
         prototype: HTMLLtDrawerElement;
         new (): HTMLLtDrawerElement;
     };
+    interface HTMLLtModalElement extends Components.LtModal, HTMLStencilElement {
+    }
+    var HTMLLtModalElement: {
+        prototype: HTMLLtModalElement;
+        new (): HTMLLtModalElement;
+    };
     interface HTMLElementTagNameMap {
         "lt-drawer": HTMLLtDrawerElement;
+        "lt-modal": HTMLLtModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -34,8 +47,18 @@ declare namespace LocalJSX {
         "open"?: boolean;
         "position"?: 'top' | 'right' | 'bottom' | 'left';
     }
+    interface LtModal {
+        "modaltitle"?: string;
+        "onModalAfterHide"?: (event: CustomEvent<any>) => void;
+        "onModalAfterShow"?: (event: CustomEvent<any>) => void;
+        "onModalHide"?: (event: CustomEvent<any>) => void;
+        "onModalOverlayDismiss"?: (event: CustomEvent<any>) => void;
+        "onModalShow"?: (event: CustomEvent<any>) => void;
+        "open"?: boolean;
+    }
     interface IntrinsicElements {
         "lt-drawer": LtDrawer;
+        "lt-modal": LtModal;
     }
 }
 export { LocalJSX as JSX };
@@ -43,6 +66,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lt-drawer": LocalJSX.LtDrawer & JSXBase.HTMLAttributes<HTMLLtDrawerElement>;
+            "lt-modal": LocalJSX.LtModal & JSXBase.HTMLAttributes<HTMLLtModalElement>;
         }
     }
 }

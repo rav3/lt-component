@@ -1,6 +1,3 @@
-*{
-    box-sizing: border-box;
-}
 .drawer{
     position: absolute;
     top:0;
@@ -27,7 +24,7 @@
         // background-color:rgba(black, 0.5);
         background-color: var(--lt-overlay-bgcolor);
         opacity:0;
-        transition: 250ms opacity;
+        transition: var(--lt-transition-medium) opacity;
         
 
         &:focus{
@@ -46,8 +43,8 @@
         overflow: auto;
         pointer-events: all;
         padding:  1rem 1.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        transition: 300ms transform;
+        box-shadow: var(--lt-shadow-medium);
+        transition: var(--lt-transition-medium) transform;
         &:focus{
             outline: none;
         }

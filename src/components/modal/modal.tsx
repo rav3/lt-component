@@ -1,21 +1,21 @@
 import {Component, Prop, Watch, Event, EventEmitter, Method, Element, h, Listen} from '@stencil/core'
 
 @Component({
-    tag: 'lt-drawer',
-    styleUrl: 'drawer.scss',
+    tag: 'lt-modal',
+    styleUrl: 'modal.scss',
     shadow: true
 })
 
-export class Drawer{
+export class Modal{
     
-    drawer: HTMLElement;
+    modal: HTMLElement;
     panel: HTMLElement;
 
     isShowing = false;
 
-    @Element() host: HTMLLtDrawerElement;
-
-    @Prop() position: 'top' | 'right' | 'bottom' | 'left' = 'right';
+    @Element() host: HTMLLtModalElement;
+    
+    @Prop() modaltitle = '';
     @Prop({ mutable: true, reflect: true }) open = false;
 
     @Watch('open')
@@ -23,11 +23,11 @@ export class Drawer{
         this.open ? this.show() : this.hide();
     }
 
-    @Event() drawerHide: EventEmitter;
-    @Event() drawerAfterHide: EventEmitter;
-    @Event() drawerShow: EventEmitter;
-    @Event() drawerAfterShow: EventEmitter;
-    @Event() drawerOverlayDismiss: EventEmitter;
+    @Event() modalHide: EventEmitter;
+    @Event() modalAfterHide: EventEmitter;
+    @Event() modalShow: EventEmitter;
+    @Event() modalAfterShow: EventEmitter;
+    @Event() modalOverlayDismiss: EventEmitter;
 
     connectedCallback() {
         this.handleCloseClick = this.handleCloseClick.bind(this);
@@ -41,13 +41,13 @@ export class Drawer{
             if (this.isShowing) {
                 return;
             }
-            const drawerShow = this.drawerShow.emit();
-            if (drawerShow.defaultPrevented) {
+            const modalShow = this.modalShow.emit();
+            if (modalShow.defaultPrevented) {
                 this.open = false;
                 return;
             }
 
-            this.drawer.hidden = false;
+            this.modal.hidden = false;
             this.host.clientWidth;
             this.isShowing = true;
             this.open = true;
@@ -58,8 +58,8 @@ export class Drawer{
             if (!this.isShowing) {
                 return;
             }
-            const drawerHide = this.drawerHide.emit();
-            if (drawerHide.defaultPrevented) {
+            const modalHide = this.modalHide.emit();
+            if (modalHide.defaultPrevented) {
                 this.open = true;
                 return;
             }
@@ -87,15 +87,15 @@ export class Drawer{
     }
 
     handleOverlayClick() {
-        this.drawerOverlayDismiss.emit();
+        this.modalOverlayDismiss.emit();
         this.hide();
     }
     handleTransitionEnd(event: TransitionEvent) {
         const target = event.target as HTMLElement;
     
-        if (event.propertyName === 'transform' && target.classList.contains('drawer__panel')) {
-            this.open ? this.drawerAfterShow.emit() : this.drawerAfterHide.emit();
-            this.drawer.hidden = !this.open;
+        if (event.propertyName === 'transform' && target.classList.contains('modal__panel')) {
+            this.open ? this.modalAfterShow.emit() : this.modalAfterHide.emit();
+            this.modal.hidden = !this.open;
     
             if (this.open) {
                 this.panel.focus();
@@ -106,31 +106,33 @@ export class Drawer{
     render(){
         return(
             <div
-                ref={el => (this.drawer = el)}
+                ref={el => (this.modal = el)}
                 class={{
-                    drawer: true,
-                    'drawer--open': this.open,
-                    'drawer--top': this.position === 'top',
-                    'drawer--right': this.position === 'right',
-                    'drawer--bottom': this.position === 'bottom',
-                    'drawer--left': this.position === 'left',
+                    modal: true,
+                    'modal--open': this.open,
                 }}
                 onKeyDown={this.handleKeyDown}
                 onTransitionEnd={this.handleTransitionEnd}
                 hidden
                 >
                 
-            
-                <div class="drawer__overlay" onClick={this.handleOverlayClick} />
+                <div class="modal__overlay" onClick={this.handleOverlayClick} />
                 <div 
                     ref={el => (this.panel = el)}
-                    class="drawer__panel"
+                    class="modal__panel"
                     role="dialog"
                     aria-modal="true"
+                    aria-label={ this.modaltitle || null}
                     aria-hidden={!this.open}
                     tabIndex={0}
                 >
-                    <button class="drawer__close" onClick={this.handleCloseClick}>✕</button>
+                    <header part="header" class="modal__header">
+                        <span part="title" class="modal__title">
+                        {this.modaltitle}
+                        </span>
+                        <button class="modal__close" onClick={this.handleCloseClick}>✕</button>
+                    </header>
+                    
                     <slot />
                 </div>
             </div>
