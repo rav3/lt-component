@@ -1,7 +1,9 @@
 # lt-modal
 
 ```
-<lt-modal modaltitle=""></lt-modal>
+<lt-modal modaltitle="">
+    <p slot="body">Content Here</p>
+</lt-modal>
 ```
 
 <!-- Auto Generated Below -->
