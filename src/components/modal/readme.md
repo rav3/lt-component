@@ -1,6 +1,8 @@
 # lt-modal
 
-
+```
+<lt-modal modaltitle=""></lt-modal>
+```
 
 <!-- Auto Generated Below -->
 
@@ -51,6 +53,7 @@ Type: `Promise<void>`
 
 | Part       | Description |
 | ---------- | ----------- |
+| `"body"`   |             |
 | `"header"` |             |
 | `"title"`  |             |
 

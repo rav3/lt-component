@@ -128,12 +128,14 @@ export class Modal{
                 >
                     <header part="header" class="modal__header">
                         <span part="title" class="modal__title">
-                        {this.modaltitle}
+                            {this.modaltitle}
                         </span>
                         <button class="modal__close" onClick={this.handleCloseClick}>✕</button>
                     </header>
                     
-                    <slot />
+                    <div class="modal__body" part="body">
+                        <slot name="body"/>
+                    </div>
                 </div>
             </div>
         )

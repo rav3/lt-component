@@ -28,4 +28,19 @@
     --lt-shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --lt-shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --lt-shadow-x-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    //Spaceing
+    --lt-spacing-xxx-small: 0.125rem; // 2px
+    --lt-spacing-xx-small: 0.25rem; // 4px
+    --lt-spacing-x-small: 0.5rem; // 8px
+    --lt-spacing-small: 0.75rem; // 12px
+    --lt-spacing-medium: 1rem; // 16px
+    --lt-spacing-large: 1.25rem; // 20px
+    --lt-spacing-x-large: 1.75rem; // 28px
+    --lt-spacing-xx-large: 2.25rem; // 36px
+    --lt-spacing-xxx-large: 3rem; // 48px
+    --lt-spacing-xxxx-large: 4.5rem; // 72px
+
+    //panel for drawer / modal
+    --lt-panel-background-color : white;
 }
