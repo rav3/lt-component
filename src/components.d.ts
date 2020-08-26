@@ -12,6 +12,17 @@ export namespace Components {
         "position": 'top' | 'right' | 'bottom' | 'left';
         "show": () => Promise<void>;
     }
+    interface LtSidemenu {
+        "ariaExpanded": boolean;
+        "depth": number;
+        "hasChildren": boolean;
+        "label": string;
+        "parentExpanded": boolean;
+        /**
+          * Properties **********************
+         */
+        "url": string;
+    }
 }
 declare global {
     interface HTMLLtDrawerElement extends Components.LtDrawer, HTMLStencilElement {
@@ -20,8 +31,15 @@ declare global {
         prototype: HTMLLtDrawerElement;
         new (): HTMLLtDrawerElement;
     };
+    interface HTMLLtSidemenuElement extends Components.LtSidemenu, HTMLStencilElement {
+    }
+    var HTMLLtSidemenuElement: {
+        prototype: HTMLLtSidemenuElement;
+        new (): HTMLLtSidemenuElement;
+    };
     interface HTMLElementTagNameMap {
         "lt-drawer": HTMLLtDrawerElement;
+        "lt-sidemenu": HTMLLtSidemenuElement;
     }
 }
 declare namespace LocalJSX {
@@ -34,8 +52,24 @@ declare namespace LocalJSX {
         "open"?: boolean;
         "position"?: 'top' | 'right' | 'bottom' | 'left';
     }
+    interface LtSidemenu {
+        "ariaExpanded"?: boolean;
+        "depth"?: number;
+        "hasChildren"?: boolean;
+        "label"?: string;
+        /**
+          * Events **********************
+         */
+        "onMenuItemToggled"?: (event: CustomEvent<any>) => void;
+        "parentExpanded"?: boolean;
+        /**
+          * Properties **********************
+         */
+        "url"?: string;
+    }
     interface IntrinsicElements {
         "lt-drawer": LtDrawer;
+        "lt-sidemenu": LtSidemenu;
     }
 }
 export { LocalJSX as JSX };
@@ -43,6 +77,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lt-drawer": LocalJSX.LtDrawer & JSXBase.HTMLAttributes<HTMLLtDrawerElement>;
+            "lt-sidemenu": LocalJSX.LtSidemenu & JSXBase.HTMLAttributes<HTMLLtSidemenuElement>;
         }
     }
 }
