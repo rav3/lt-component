@@ -12,6 +12,12 @@ export namespace Components {
         "position": 'top' | 'right' | 'bottom' | 'left';
         "show": () => Promise<void>;
     }
+    interface LtModal {
+        "hide": () => Promise<void>;
+        "modaltitle": string;
+        "open": boolean;
+        "show": () => Promise<void>;
+    }
     interface LtSidemenu {
         "ariaExpanded": boolean;
         "depth": number;
@@ -31,6 +37,12 @@ declare global {
         prototype: HTMLLtDrawerElement;
         new (): HTMLLtDrawerElement;
     };
+    interface HTMLLtModalElement extends Components.LtModal, HTMLStencilElement {
+    }
+    var HTMLLtModalElement: {
+        prototype: HTMLLtModalElement;
+        new (): HTMLLtModalElement;
+    };
     interface HTMLLtSidemenuElement extends Components.LtSidemenu, HTMLStencilElement {
     }
     var HTMLLtSidemenuElement: {
@@ -39,6 +51,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "lt-drawer": HTMLLtDrawerElement;
+        "lt-modal": HTMLLtModalElement;
         "lt-sidemenu": HTMLLtSidemenuElement;
     }
 }
@@ -51,6 +64,15 @@ declare namespace LocalJSX {
         "onDrawerShow"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
         "position"?: 'top' | 'right' | 'bottom' | 'left';
+    }
+    interface LtModal {
+        "modaltitle"?: string;
+        "onModalAfterHide"?: (event: CustomEvent<any>) => void;
+        "onModalAfterShow"?: (event: CustomEvent<any>) => void;
+        "onModalHide"?: (event: CustomEvent<any>) => void;
+        "onModalOverlayDismiss"?: (event: CustomEvent<any>) => void;
+        "onModalShow"?: (event: CustomEvent<any>) => void;
+        "open"?: boolean;
     }
     interface LtSidemenu {
         "ariaExpanded"?: boolean;
@@ -69,6 +91,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "lt-drawer": LtDrawer;
+        "lt-modal": LtModal;
         "lt-sidemenu": LtSidemenu;
     }
 }
@@ -77,6 +100,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lt-drawer": LocalJSX.LtDrawer & JSXBase.HTMLAttributes<HTMLLtDrawerElement>;
+            "lt-modal": LocalJSX.LtModal & JSXBase.HTMLAttributes<HTMLLtModalElement>;
             "lt-sidemenu": LocalJSX.LtSidemenu & JSXBase.HTMLAttributes<HTMLLtSidemenuElement>;
         }
     }

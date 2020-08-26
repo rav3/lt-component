@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
-    <link rel="stylesheet" href="/build/lt-component.css">
-    <script type="module" src="/build/lt-component.esm.js"></script>
-    <script nomodule src="/build/lt-component.js"></script>
-  </head>
-  <body>
-    <lt-drawer></lt-drawer>
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+  <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+  <link rel="stylesheet" href="/build/lt-component.css">
+  <script type="module" src="/build/lt-component.esm.js"></script>
+  <script nomodule src="/build/lt-component.js"></script>
+</head>
+
+<body>
+  <lt-drawer open>
     <nav aria-label="Sample Menu">
       <lt-sidemenu label="About us"></lt-sidemenu>
       <lt-sidemenu label="Open">
@@ -32,10 +34,41 @@
       </lt-sidemenu>
       <lt-sidemenu label="Cart"></lt-sidemenu>
     </nav>
-    
-    <script>
-      var drawer = document.querySelector('lt-drawer');
-      var openBtn = document.querySelector('button');
-    </script>
-  </body>
+  </lt-drawer>
+
+
+
+  <div class="container">
+    <aside>
+      <lt-sidenav></lt-sidenav>
+    </aside>
+    <main>
+      <button class="drawer-button">Drawer Open</button>
+      <button class="modal-button">Modal Open</button>
+    </main>
+  </div>
+  <lt-drawer>
+
+  </lt-drawer>
+  <lt-modal modaltitle="Wassup">
+    <p slot="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatem labore laboriosam neque
+      aspernatur minima excepturi error quis nulla exercitationem?</p>
+
+  </lt-modal>
+  <script>
+    var modal = document.querySelector('lt-modal');
+    var drawer = document.querySelector('lt-drawer');
+    var openDrawer = document.querySelector('.drawer-button');
+    var openModal = document.querySelector('.modal-button');
+
+    openDrawer.addEventListener('click', function () {
+      drawer.show();
+    })
+    openModal.addEventListener('click', function () {
+      modal.show();
+    })
+
+  </script>
+</body>
+
 </html>

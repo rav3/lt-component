@@ -8,7 +8,10 @@ export const config: Config = {
   globalStyle: 'src/globalStyle/global.scss',
   plugins: [
     sass({
-      includePaths: ['src/globalStyle']
+      includePaths: [
+        'src/globalStyle',
+        'src/css'
+      ]
     })
   ],
   outputTargets: [
@@ -17,11 +20,18 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     {
+      type: 'dist-custom-elements-bundle'
+    },
+    {
       type: 'docs-readme',
     },
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+    },
+    {
+      type: 'docs-json',
+      file: './dist/components.json'
     },
   ],
 };
