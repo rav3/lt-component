@@ -1,7 +1,7 @@
 :host {
     --width: 31rem;
     display: contents;
-  }
+}
 
 .modal{
     display:flex;
@@ -13,6 +13,7 @@
     bottom:0;
     left:0;
     z-index: var(--lt-z-index-modal);
+    font-family: var(--lt-font-sans);
     &[hidden]{
         display: none;
     }
@@ -27,7 +28,6 @@
         bottom: 0;
         left: 0;
         pointer-events: all;
-        // background-color:rgba(black, 0.5);
         background-color: var(--lt-overlay-bgcolor);
         opacity:0;
         transition: var(--lt-transition-medium) opacity;
@@ -54,12 +54,10 @@
         transition: var(--lt-transition-medium) transform, var(--lt-transition-medium) opacity;
         z-index: 2;
 
-
         &:focus{
             outline: none;
         }
-        
-        
+                
         .modal--open &{
             display: flex;
             opacity: 1;
@@ -70,9 +68,12 @@
             display:flex;
             flex: 0 0 auto;
             padding: var(--lt-spacing-large);
+            &.header--none{
+                padding-bottom: 0;
+            }
             .modal__title{
                 flex: 1 1 auto;
-                font-size: var(--lt-font-size-lg);
+                font-size: var(--lt-font-size-large);
             }
             .modal__close{
                 border: 0;
@@ -90,6 +91,7 @@
     &__body{
         flex: 1 1 auto;
         padding: var(--lt-spacing-large);
+        padding-top: 0;
     }
 
     &__footer{

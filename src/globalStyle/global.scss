@@ -1,15 +1,70 @@
+@import 'mixins/color-palette';
+
 :root{
+    // Fonts
+    --lt-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    //Color
+    --lt-color-primary-hue: 203;
+    --lt-color-primary-saturation: 100%;
+    --lt-color-primary-text: var(--lt-color-white);
+
+    --lt-color-success-hue: 110;
+    --lt-color-success-saturation: 70%;
+    --lt-color-success-text: var(--lt-color-white);
+
+    --lt-color-info-hue: var(--lt-color-primary-hue);
+    --lt-color-info-saturation: 10%;
+    --lt-color-info-text: var(--lt-color-white);
+
+    --lt-color-warning-hue: 40;
+    --lt-color-warning-saturation: 90%;
+    --lt-color-warning-text: var(--lt-color-white);
+
+    --lt-color-danger-hue: 10;
+    --lt-color-danger-saturation: 95%;
+    --lt-color-danger-text: var(--lt-color-white);
+
+    --lt-color-gray-hue: var(--lt-color-primary-hue);
+    --lt-color-gray-saturation: 10%;
+    --lt-color-gray-text: var(--lt-color-white);
+
+    --lt-color-white: white;
+    --lt-color-black: black;
+
+    @include color-palette('primary');
+    @include color-palette('success');
+    @include color-palette('info');
+    @include color-palette('warning');
+    @include color-palette('danger');
+    @include color-palette('gray');
+
     //Font Size
-    --lt-font-size-lg: 2.5rem;
+    --lt-font-size-x-small: 0.875rem;
+    --lt-font-size-small: 0.875rem;
+    --lt-font-size-base: 1rem;
+    --lt-font-size-large: 1.125rem;
+    --lt-font-size-x-large: 1.25rem;
+    --lt-font-size-2x-large: 1.5rem;
+    --lt-font-size-3x-large: 1.875rem;
+    --lt-font-size-4x-large: 2.25rem;
+    --lt-font-size-5x-large: 3rem;
+    --lt-font-size-6x-large: 4rem;
     // Z index token
     --lt-z-index-drawer: 700;
     --lt-z-index-modal: 800;
     
-    //Overlay Token
-    // For Modal / Drawer    
+    //Overlay Token   
     --lt-overlay-bgcolor:hsla(200,20%,10%, 0.5);
 
-
+    --primarycolor: blue;
+    --secondarycolor: blue;
+    --secondarycolor: blue;
+    --secondarycolor: blue;
+    --secondarycolor: blue;
+    --secondarycolor: blue;
+    --secondarycolor: blue;
     //Border Radius
     --lt-border-radius-small: 0.375rem;
     --lt-border-radius-medium: 0.375rem;
@@ -30,17 +85,21 @@
     --lt-shadow-x-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     //Spaceing
-    --lt-spacing-xxx-small: 0.125rem; // 2px
-    --lt-spacing-xx-small: 0.25rem; // 4px
+    --lt-spacing-3x-small: 0.125rem; // 2px
+    --lt-spacing-2x-small: 0.25rem; // 4px
     --lt-spacing-x-small: 0.5rem; // 8px
     --lt-spacing-small: 0.75rem; // 12px
     --lt-spacing-medium: 1rem; // 16px
     --lt-spacing-large: 1.25rem; // 20px
     --lt-spacing-x-large: 1.75rem; // 28px
-    --lt-spacing-xx-large: 2.25rem; // 36px
-    --lt-spacing-xxx-large: 3rem; // 48px
-    --lt-spacing-xxxx-large: 4.5rem; // 72px
+    --lt-spacing-2x-large: 2.25rem; // 36px
+    --lt-spacing-3x-large: 3rem; // 48px
+    --lt-spacing-4x-large: 4.5rem; // 72px
 
     //panel for drawer / modal
     --lt-panel-background-color : white;
+
+
+    //sidemenu
+    --lt-sidemenu-link-color-hover : blue;
 }

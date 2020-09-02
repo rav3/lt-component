@@ -22,6 +22,7 @@ export namespace Components {
         "ariaExpanded": boolean;
         "depth": number;
         "hasChildren": boolean;
+        "iconclass": string;
         "label": string;
         "parentExpanded": boolean;
         /**
@@ -78,6 +79,7 @@ declare namespace LocalJSX {
         "ariaExpanded"?: boolean;
         "depth"?: number;
         "hasChildren"?: boolean;
+        "iconclass"?: string;
         "label"?: string;
         /**
           * Events **********************

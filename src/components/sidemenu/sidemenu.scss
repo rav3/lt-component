@@ -1,37 +1,20 @@
-/*
-    The following variables can be overridden
-
-    --lt-sidemenu-l1-background
-    --lt-sidemenu-l1-background-hover
-    --lt-sidemenu-l1-link-color
-    --lt-sidemenu-l1-border-color
-    --lt-sidemenu-l1-fontsize
-            
-    --lt-sidemenu-l2-background
-    --lt-sidemenu-l2-link-color
-    --lt-sidemenu-l2-border-color
-    --lt-sidemenu-l2-fontsize
-    
-    --lt-sidemenu-background
-    --lt-sidemenu-link-color
-    --lt-sidemenu-link-color-hover
-    --lt-sidemenu-fontsize
-*/
-
+@import 'component';
 
 a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: var(--lt-spacing-medium);
+    padding-left: 0;
     text-decoration: none;
-    // background-color: var(--lt-sidemenu-background, #fff);
+    font-family: var(--lt-font-sans);
     color: var(--lt-sidemenu-link-color, #1d2b42);
-    font-size: var(--lt-sidemenu-fontsize, 1rem);
+    font-size: var(--lt-font-size-base);
+    
   
     &[aria-haspopup="true"]::after {
-      width: 5px;
-      height: 5px;
+      width: 10px;
+      height: 10px;
       border-top-width: 0;
       border-left-width: 0;
       border-bottom-width: 2px;
@@ -40,19 +23,28 @@ a {
       border-color: var(--lt-sidemenu-link-color, #1d2b42);
       
       transform: rotate(-45deg);
+      transform-origin: center center;
       transition: transform 0.1s ease;
       content: "";
     }
   
     &[aria-expanded="true"]::after {
       transform: rotate(45deg);
-      margin-right: 6px;
-      margin-top: 3px;
     }
   
     &:hover {
       color: var(--lt-sidemenu-link-color-hover, #007acc);
+      background-color: rgba(var(--lt-sidemenu-link-color-hover), 0.3)
     }
+
+    &:focus{
+      outline: 0;
+    }
+
+    i{
+      margin-right: var(--lt-spacing-small);
+    }
+    
   }
   
   
@@ -60,7 +52,8 @@ a {
     > a {
     //   background-color: var(--lt-sidemenu-l1-background, #797979);
       color: var(--lt-sidemenu-l1-link-color, #333);
-      border-bottom: 1px solid var(--lt-sidemenu-l1-border-color, #1d2b42);
+      // border-bottom: 1px solid var(--lt-sidemenu-l1-border-color, #1d2b42);
+      border-bottom: 1px solid red;
       font-size: var(--lt-sidemenu-l1-fontsize, 1rem);
   
       &::after {
@@ -91,7 +84,7 @@ a {
     opacity: 0;
     overflow: hidden;
     max-height: 0;
-    transition: all 0.2s ease;
+    transition: all var(--lt-transition-medium) ease;
   }
   
   a[aria-expanded="true"] ~ .lt-sidemenu-children {

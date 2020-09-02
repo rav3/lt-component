@@ -11,6 +11,7 @@
     height:100%;
     pointer-events: none;
     overflow: hidden;
+    font-family: var(--lt-font-sans);
 
     &[hidden]{
         display: none;

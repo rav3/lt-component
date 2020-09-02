@@ -126,9 +126,10 @@ export class Modal{
                     aria-hidden={!this.open}
                     tabIndex={0}
                 >
-                    <header part="header" class="modal__header">
+                    {/* <header part="header" class="modal__header"> */}
+                    <header part="header" class={this.modaltitle ? 'modal__header' : 'modal__header header--none'}>
                         <span part="title" class="modal__title">
-                            {this.modaltitle}
+                            {this.modaltitle || null}
                         </span>
                         <button class="modal__close" onClick={this.handleCloseClick}>✕</button>
                     </header>

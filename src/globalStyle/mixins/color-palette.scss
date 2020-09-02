@@ -1,0 +1,7 @@
+@mixin color-palette($name) {
+    @for $i from 10 through 90 {
+      @if $i % 10 == 0 {
+        --lt-color-#{$name}-#{$i}: hsl(var(--lt-color-#{$name}-hue), var(--lt-color-#{$name}-saturation), #{$i * 1%});
+      }
+    }
+  }

@@ -48,7 +48,6 @@ export class Drawer{
             }
 
             this.drawer.hidden = false;
-            this.host.clientWidth;
             this.isShowing = true;
             this.open = true;
     }

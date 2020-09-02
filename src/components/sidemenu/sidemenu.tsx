@@ -14,6 +14,7 @@ export class SideMenu {
 
     @Prop({ mutable: true }) url: string = "";
     @Prop({ mutable: true }) label: string = "";
+    @Prop({ mutable: true }) iconclass: string = "";
     @Prop({ mutable: true }) ariaExpanded: boolean = false;
     @Prop({ mutable: true, reflect: true }) depth: number = 0;
     @Prop({ mutable: true }) hasChildren: boolean = null;
@@ -61,7 +62,7 @@ export class SideMenu {
     }
 
     render() {
-        const leftIndent = this.depth > 2 ? 10 * this.depth + "px" : "10px";
+        const leftIndent = this.depth > 1 ? 13 * this.depth + "px" : "0px";
         
         return (
             <div role="menuitem">
@@ -75,9 +76,15 @@ export class SideMenu {
                     onClick={e => this.handleClick(e)}
                     style={{ paddingLeft: leftIndent }}
                 >
-                    {this.label}
+                    <span>
+                        {this.iconclass && (
+                            <i class={this.iconclass}></i>
+                        )}
+                        {this.label}
+                    </span>
+                    
                 </a>
-
+                
                 {this.hasChildren && (
                     <div class="lt-sidemenu-children" role="menu" aria-label={this.label}>
                         <slot />
