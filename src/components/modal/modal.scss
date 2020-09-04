@@ -1,3 +1,5 @@
+@import 'component';
+
 :host {
     --width: 31rem;
     display: contents;
@@ -68,6 +70,7 @@
             display:flex;
             flex: 0 0 auto;
             padding: var(--lt-spacing-large);
+            line-height: var(--lt-line-height-dense);
             &.header--none{
                 padding-bottom: 0;
             }
@@ -92,6 +95,7 @@
         flex: 1 1 auto;
         padding: var(--lt-spacing-large);
         padding-top: 0;
+        line-height: var(--lt-line-height-dense);
     }
 
     &__footer{

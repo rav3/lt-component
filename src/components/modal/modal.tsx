@@ -131,7 +131,9 @@ export class Modal{
                         <span part="title" class="modal__title">
                             {this.modaltitle || null}
                         </span>
-                        <button class="modal__close" onClick={this.handleCloseClick}>✕</button>
+                        <button class="modal__close" onClick={this.handleCloseClick}>
+                            <i class="fas fa-times"></i>
+                        </button>
                     </header>
                     
                     <div class="modal__body" part="body">

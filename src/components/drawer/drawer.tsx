@@ -129,7 +129,9 @@ export class Drawer{
                     aria-hidden={!this.open}
                     tabIndex={0}
                 >
-                    <button class="drawer__close" onClick={this.handleCloseClick}>✕</button>
+                    <button class="drawer__close" onClick={this.handleCloseClick}>
+                        <i class="fas fa-times"></i>
+                    </button>
                     <slot />
                 </div>
             </div>

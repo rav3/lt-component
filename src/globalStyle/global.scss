@@ -5,6 +5,32 @@
     --lt-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
+    //Typography
+    
+    //Font Size
+    --lt-font-size-x-small: 0.875rem;
+    --lt-font-size-small: 0.875rem;
+    --lt-font-size-base: 1rem;
+    --lt-font-size-large: 1.125rem;
+    --lt-font-size-x-large: 1.25rem;
+    --lt-font-size-2x-large: 1.5rem;
+    --lt-font-size-3x-large: 1.875rem;
+    --lt-font-size-4x-large: 2.25rem;
+    --lt-font-size-5x-large: 3rem;
+    --lt-font-size-6x-large: 4rem;
+
+    // Font weights
+    --lt-font-weight-light: 300;
+    --lt-font-weight-normal: 400;
+    --lt-font-weight-semibold: 500;
+    --lt-font-weight-bold: 700;
+
+    // Line heights
+    --lt-line-height-dense: 1.4;
+    --lt-line-height-normal: 1.8;
+    --lt-line-height-loose: 2.2;
+
+
     //Color
     --lt-color-primary-hue: 203;
     --lt-color-primary-saturation: 100%;
@@ -40,17 +66,7 @@
     @include color-palette('danger');
     @include color-palette('gray');
 
-    //Font Size
-    --lt-font-size-x-small: 0.875rem;
-    --lt-font-size-small: 0.875rem;
-    --lt-font-size-base: 1rem;
-    --lt-font-size-large: 1.125rem;
-    --lt-font-size-x-large: 1.25rem;
-    --lt-font-size-2x-large: 1.5rem;
-    --lt-font-size-3x-large: 1.875rem;
-    --lt-font-size-4x-large: 2.25rem;
-    --lt-font-size-5x-large: 3rem;
-    --lt-font-size-6x-large: 4rem;
+
     // Z index token
     --lt-z-index-drawer: 700;
     --lt-z-index-modal: 800;
