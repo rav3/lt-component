@@ -3,7 +3,7 @@ import {Component, Prop, Watch, Event, EventEmitter, Method, Element, h, Listen}
 @Component({
     tag: 'lt-drawer',
     styleUrl: 'drawer.scss',
-    shadow: true
+    scoped: true
 })
 
 export class Drawer{
@@ -17,6 +17,7 @@ export class Drawer{
 
     @Prop() position: 'top' | 'right' | 'bottom' | 'left' = 'right';
     @Prop({ mutable: true, reflect: true }) open = false;
+    @Prop() contained = false;
 
     @Watch('open')
         handleOpenChange() {
@@ -112,7 +113,7 @@ export class Drawer{
                     'drawer--top': this.position === 'top',
                     'drawer--right': this.position === 'right',
                     'drawer--bottom': this.position === 'bottom',
-                    'drawer--left': this.position === 'left',
+                    'drawer--left': this.position === 'left'
                 }}
                 onKeyDown={this.handleKeyDown}
                 onTransitionEnd={this.handleTransitionEnd}
@@ -130,7 +131,7 @@ export class Drawer{
                     tabIndex={0}
                 >
                     <button class="drawer__close" onClick={this.handleCloseClick}>
-                        <i class="fas fa-times"></i>
+                        &#x2715;
                     </button>
                     <slot />
                 </div>

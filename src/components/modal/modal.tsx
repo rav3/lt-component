@@ -132,7 +132,7 @@ export class Modal{
                             {this.modaltitle || null}
                         </span>
                         <button class="modal__close" onClick={this.handleCloseClick}>
-                            <i class="fas fa-times"></i>
+                            &#x2715;
                         </button>
                     </header>
                     

@@ -30,7 +30,6 @@
     --lt-line-height-normal: 1.8;
     --lt-line-height-loose: 2.2;
 
-
     //Color
     --lt-color-primary-hue: 203;
     --lt-color-primary-saturation: 100%;
@@ -74,13 +73,6 @@
     //Overlay Token   
     --lt-overlay-bgcolor:hsla(200,20%,10%, 0.5);
 
-    --primarycolor: blue;
-    --secondarycolor: blue;
-    --secondarycolor: blue;
-    --secondarycolor: blue;
-    --secondarycolor: blue;
-    --secondarycolor: blue;
-    --secondarycolor: blue;
     //Border Radius
     --lt-border-radius-small: 0.375rem;
     --lt-border-radius-medium: 0.375rem;
@@ -114,8 +106,8 @@
 
     //panel for drawer / modal
     --lt-panel-background-color : white;
-
+    --lt-panel-close-button-size : var(--lt-spacing-large);
 
     //sidemenu
-    --lt-sidemenu-link-color-hover : blue;
+    --lt-sidemenu-link-color-hover : var(--lt-color-info-90);
 }

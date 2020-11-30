@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LtDrawer {
+        "contained": boolean;
         "hide": () => Promise<void>;
         "open": boolean;
         "position": 'top' | 'right' | 'bottom' | 'left';
@@ -58,6 +59,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface LtDrawer {
+        "contained"?: boolean;
         "onDrawerAfterHide"?: (event: CustomEvent<any>) => void;
         "onDrawerAfterShow"?: (event: CustomEvent<any>) => void;
         "onDrawerHide"?: (event: CustomEvent<any>) => void;

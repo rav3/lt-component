@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                     | Default   |
-| ---------- | ---------- | ----------- | ---------------------------------------- | --------- |
-| `open`     | `open`     |             | `boolean`                                | `false`   |
-| `position` | `position` |             | `"bottom" \| "left" \| "right" \| "top"` | `'right'` |
+| Property    | Attribute   | Description | Type                                     | Default   |
+| ----------- | ----------- | ----------- | ---------------------------------------- | --------- |
+| `contained` | `contained` |             | `boolean`                                | `false`   |
+| `open`      | `open`      |             | `boolean`                                | `false`   |
+| `position`  | `position`  |             | `"bottom" \| "left" \| "right" \| "top"` | `'right'` |
 
 
 ## Events
