@@ -18,7 +18,7 @@ export const config: Config = {
   ],
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: '../../../dist/types',
+      componentCorePackage: '../../../src',
       proxiesFile: './generated/lt-component-react/src/components.ts'
     }),
     {
