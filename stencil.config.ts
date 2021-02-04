@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'lt-component',
@@ -16,6 +17,10 @@ export const config: Config = {
     })
   ],
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: '../../../dist/types',
+      proxiesFile: './generated/lt-component-react/src/components.ts'
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',

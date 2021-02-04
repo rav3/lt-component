@@ -12,7 +12,8 @@
   "unpkg": "dist/lt-component/lt-component.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "generated/"
   ],
   "scripts": {
     "build": "stencil build --docs",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@stencil/core": "2.0.3",
+    "@stencil/react-output-target": "0.0.9",
     "@stencil/sass": "^1.3.2"
   },
   "license": "MIT"
