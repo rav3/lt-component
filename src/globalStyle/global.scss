@@ -70,6 +70,7 @@
     --lt-z-index-drawer: 700;
     --lt-z-index-modal: 800;
     
+    
     //Overlay Token   
     --lt-overlay-bgcolor:hsla(200,20%,10%, 0.5);
 
@@ -107,6 +108,9 @@
     //panel for drawer / modal
     --lt-panel-background-color : white;
     --lt-panel-close-button-size : var(--lt-spacing-large);
+
+    //drawer width
+    --lt-drawer-size: 30rem;
 
     //sidemenu
     --lt-sidemenu-link-color-hover : var(--lt-color-info-90);
