@@ -9,13 +9,13 @@
 
 | Property         | Attribute         | Description                       | Type      | Default |
 | ---------------- | ----------------- | --------------------------------- | --------- | ------- |
-| `ariaExpanded`   | `aria-expanded`   |                                   | `boolean` | `false` |
+| `ariaExpanded`   | `aria-expanded`   |                                   | `string`  | `''`    |
 | `depth`          | `depth`           |                                   | `number`  | `0`     |
 | `hasChildren`    | `has-children`    |                                   | `boolean` | `null`  |
-| `iconclass`      | `iconclass`       |                                   | `string`  | `""`    |
-| `label`          | `label`           |                                   | `string`  | `""`    |
+| `iconclass`      | `iconclass`       |                                   | `string`  | `''`    |
+| `label`          | `label`           |                                   | `string`  | `''`    |
 | `parentExpanded` | `parent-expanded` |                                   | `boolean` | `false` |
-| `url`            | `url`             | Properties ********************** | `string`  | `""`    |
+| `url`            | `url`             | Properties ********************** | `string`  | `''`    |
 
 
 ## Events

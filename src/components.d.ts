@@ -20,7 +20,7 @@ export namespace Components {
         "show": () => Promise<void>;
     }
     interface LtSidemenu {
-        "ariaExpanded": boolean;
+        "ariaExpanded": string;
         "depth": number;
         "hasChildren": boolean;
         "iconclass": string;
@@ -78,7 +78,7 @@ declare namespace LocalJSX {
         "open"?: boolean;
     }
     interface LtSidemenu {
-        "ariaExpanded"?: boolean;
+        "ariaExpanded"?: string;
         "depth"?: number;
         "hasChildren"?: boolean;
         "iconclass"?: string;
