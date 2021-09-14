@@ -36,7 +36,7 @@ export class SideMenu {
   @Listen('handleClick') handleClick(e) {
     if (this.hasChildren) {
       e.preventDefault();
-      this.ariaExpanded = !this.ariaExpanded;
+      this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true';
     }
   }
 
