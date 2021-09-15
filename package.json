@@ -1,6 +1,6 @@
 {
   "name": "lt-component",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -26,6 +26,18 @@
     "@stencil/core": "2.0.3",
     "@stencil/react-output-target": "0.0.9",
     "@stencil/sass": "^1.3.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "license": "MIT"
 }
