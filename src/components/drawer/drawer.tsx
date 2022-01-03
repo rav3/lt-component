@@ -130,7 +130,7 @@ export class Drawer{
                     aria-hidden={!this.open}
                     tabIndex={0}
                 >
-                    <button class="drawer__close" onClick={this.handleCloseClick}>
+                    <button class="drawer__close" type="button" onClick={this.handleCloseClick}>
                         &#x2715;
                     </button>
                     <slot />
